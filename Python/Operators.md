@@ -27,3 +27,5 @@ True, False 표시
 |or|두 항 중 하나라도 참(True)이면 참(True), 모두 거짓인 경우(False) | (4>5) or (6>2)|
 |not|~의 반대| not(True) #False |
 
+True # 1
+False # 0
