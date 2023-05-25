@@ -111,7 +111,17 @@ data.groupby(['칼럼1', '칼럼2']).mean()['칼럼3']
 ```
 
 ### to_datetime
-- 문자형 자료를 datetime형으로 변환 
+1️⃣ 문자형 자료를 datetime형으로 변환 
 ```
-pd.to_datetime
+data['컬럼명'] = pd.to_datetime(data['컬럼명'], format='%Y-%m-%d %H:%M:%S'')
+```
+2️⃣ 연도/월/일/날짜/시간 추출
+```
+data['연도'].dt.date
+data['연도'].dt.year
+data['연도'].dt.month
+data['연도'].dt.time
+data['연도'].dt.hour
+data['연도'].dt.minute
+data['연도'].dt.second
 ```
