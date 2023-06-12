@@ -1,0 +1,56 @@
+집계함수
+=====
+count
+-----
+```
+SELECT COUNT(DISTINCT city)
+FROM `thelook_ecommerce.users`
+```
+- COUNT(*) : NUll 값 포함
+- COUNT(항목) : Null 값 미포함
+
+```
+SELECT id, name, sum(retail_price)
+FROM `thelook_ecommerce.products`
+```
+SELECT list expression references column id which is neither grouped nor aggregated at [1:8]
+- 집계 함수는 하나의 값이 나와야 하기 때문에 다중 칼럼 사용이 불가능하다
+
+```
+SELECT MIN(cost), SUM(retail_price)
+FROM `thelook_ecommerce.products`
+```
+결과줄이 한 줄 안에 포함되면 가능!
+
+GROUP BY
+--------
+
+```
+select country, count(id) 
+from `thelook_ecommerce.users` 
+group by country;
+```
+국가별로 id 값을 카운트 
+
+HAVING
+-------
+그룹화된 데이터에 조건을 부여한다
+
+그룹화된 조건들의 필터작업
+```
+select 
+  country, 
+  count(id) as user_count
+from `thelook_ecommerce.users`
+group by country
+having count(id) >= 4000
+```
+```
+select 
+  country, 
+  count(id) as user_count
+from `thelook_ecommerce.users`
+group by country
+having user_count >= 4000
+```
+별칭 사용 가능 그룹화 후 필터링
