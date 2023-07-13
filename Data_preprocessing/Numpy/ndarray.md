@@ -1,5 +1,7 @@
 ## Numpy
 파이썬에서 과학, 수치 연산을 위한 라이브러리
+- Creating N-dimensional arrays
+- quickly broadcast functions & Built-in functions
 
 ```
 import numpy as np
@@ -61,4 +63,6 @@ f = np.array([i for i in range(1, 10, 2)])
 print(f) # [1 3 5 7 9]
 ```
 1부터 9까지의 범위에서 2씩 증가하는 배열 만들기
+
+### Built-in Method
 
